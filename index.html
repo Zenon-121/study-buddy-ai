@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Buddy AI</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fc;
+    color: #17213b;
+}
+
+header {
+    background: #172554;
+    color: white;
+    padding: 25px 20px;
+}
+
+header h1 {
+    font-size: 27px;
+}
+
+header p {
+    margin-top: 8px;
+    color: #c7d2fe;
+}
+
+.container {
+    padding: 22px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #64748b;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 22px 16px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+}
+
+.card:hover {
+    border-color: #6366f1;
+}
+
+.icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+@media(max-width: 380px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎓 Study Buddy AI</h1>
+    <p>Your Personal AI Learning Companion</p>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <h2>Welcome, Student! 👋</h2>
+        <p>Learn smarter. Study better. Achieve more.</p>
+    </section>
+
+    <section class="features">
+
+        <div class="card" onclick="openFeature('AI Tutor')">
+            <div class="icon">🤖</div>
+            <h3>AI Tutor</h3>
+            <p>Get simple explanations for difficult topics.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card" onclick="openFeature('Quiz Generator')">
+            <div class="icon">📝</div>
+            <h3>Quiz Generator</h3>
+            <p>Test your knowledge with personalised quizzes.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card" onclick="openFeature('Study Planner')">
+            <div class="icon">📅</div>
+            <h3>Study Planner</h3>
+            <p>Create a personalised study schedule.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card" onclick="openFeature('Progress Tracker')">
+            <div class="icon">📊</div>
+            <h3>Progress Tracker</h3>
+            <p>Keep track of your learning progress.</p>
+            <button>Explore</button>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Study Buddy AI © 2026
+    <br>
+    Built to make learning accessible.
+</footer>
+
+<script>
+function openFeature(name) {
+    alert(name + " is coming soon!");
+}
+</script>
+
+</body>
+</html>
