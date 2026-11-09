@@ -165,7 +165,14 @@ footer {
 
 <script>
 function openFeature(name) {
-    alert(name + " is coming soon!");
+    if (name === "AI Tutor") {
+        document.getElementById("tutor").style.display = "block";
+        document.getElementById("tutor").scrollIntoView({
+            behavior: "smooth"
+        });
+    } else {
+        alert(name + " is coming soon!");
+    }
 }
 </script>
     <div id="tutor" style="display:none; padding:20px;">
