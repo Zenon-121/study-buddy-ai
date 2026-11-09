@@ -259,10 +259,44 @@ function generateQuiz() {
     return;
   }
 
-  output.innerHTML = `
-    <h3>${subject}: ${topic}</h3>
-    <p>Your quiz will appear here soon!</p>
-  `;
+  const questions = [
+    {
+      q: `What is the main concept of ${topic}?`,
+      options: ["A basic principle", "An unrelated idea", "A random event", "None of these"],
+      answer: 0
+    },
+    {
+      q: `Which subject does ${topic} belong to?`,
+      options: [subject, "Music", "Sports", "Cooking"],
+      answer: 0
+    },
+    {
+      q: `Why is learning ${topic} useful?`,
+      options: ["To understand the concept", "To avoid studying", "To forget information", "No reason"],
+      answer: 0
+    }
+  ];
+
+  let html = `<h3>${subject}: ${topic}</h3>`;
+
+  questions.forEach((q, i) => {
+    html += `<p><b>${i + 1}. ${q.q}</b></p>`;
+
+    q.options.forEach((option, j) => {
+      html += `
+        <label>
+          <input type="radio" name="q${i}" value="${j}">
+          ${option}
+        </label><br>`;
+    });
+  });
+
+  html += `<br><button onclick="checkQuiz()">Submit Answers</button>`;
+  output.innerHTML = html;
+}
+
+function checkQuiz() {
+  alert("Quiz submitted! Great work!");
 }
 </script>
 </body>
