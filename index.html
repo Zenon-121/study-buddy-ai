@@ -167,11 +167,20 @@ footer {
 function openFeature(name) {
     if (name === "AI Tutor") {
         document.getElementById("tutor").style.display = "block";
-        document.getElementById("tutor").scrollIntoView({
+    } 
+    else if (name === "Quiz Generator") {
+        document.getElementById("quiz").style.display = "block";
+    } 
+    else {
+        alert(name + " is coming soon!");
+    }
+
+    const section = name === "AI Tutor" ? "tutor" : "quiz";
+
+    if (name === "AI Tutor" || name === "Quiz Generator") {
+        document.getElementById(section).scrollIntoView({
             behavior: "smooth"
         });
-    } else {
-        alert(name + " is coming soon!");
     }
 }
 </script>
