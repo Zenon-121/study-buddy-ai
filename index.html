@@ -213,6 +213,48 @@ function askTutor() {
     " has been received! AI connection coming soon 🚀";
 }
 </script>
+<div id="quiz" style="display:none; padding:20px;">
+  <h2>📝 Quiz Generator</h2>
+  <p>Test your knowledge!</p>
 
+  <select id="quizSubject">
+    <option>Mathematics</option>
+    <option>Science</option>
+    <option>History</option>
+    <option>English</option>
+    <option>Computer Science</option>
+  </select>
+
+  <br><br>
+
+  <textarea id="quizTopic"
+    placeholder="Enter a topic (e.g. Number Systems)"
+    rows="3"
+    style="width:100%;"></textarea>
+
+  <br><br>
+
+  <button onclick="generateQuiz()">Generate Quiz</button>
+
+  <div id="quizQuestions" style="margin-top:20px;"></div>
+</div>
+
+<script>
+function generateQuiz() {
+  const topic = document.getElementById("quizTopic").value.trim();
+  const subject = document.getElementById("quizSubject").value;
+  const output = document.getElementById("quizQuestions");
+
+  if (!topic) {
+    output.innerText = "Please enter a topic first!";
+    return;
+  }
+
+  output.innerHTML = `
+    <h3>${subject}: ${topic}</h3>
+    <p>Your quiz will appear here soon!</p>
+  `;
+}
+</script>
 </body>
 </html>
