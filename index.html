@@ -168,6 +168,44 @@ function openFeature(name) {
     alert(name + " is coming soon!");
 }
 </script>
+    <div id="tutor" style="display:none; padding:20px;">
+  <h2>📚 AI Tutor</h2>
+  <p>Ask me anything you're studying!</p>
+
+  <select id="subject">
+    <option>Mathematics</option>
+    <option>Science</option>
+    <option>English</option>
+    <option>History</option>
+    <option>Computer Science</option>
+  </select>
+
+  <br><br>
+
+  <textarea id="question" placeholder="Type your question here..." rows="4" style="width:100%;"></textarea>
+
+  <br><br>
+
+  <button onclick="askTutor()">Ask Tutor</button>
+
+  <div id="answer" style="margin-top:20px;"></div>
+</div>
+
+<script>
+function askTutor() {
+  const question = document.getElementById("question").value;
+  const subject = document.getElementById("subject").value;
+  const answer = document.getElementById("answer");
+
+  if (!question.trim()) {
+    answer.innerText = "Please enter a question first!";
+    return;
+  }
+
+  answer.innerText = "Your question about " + subject +
+    " has been received! AI connection coming soon 🚀";
+}
+</script>
 
 </body>
 </html>
