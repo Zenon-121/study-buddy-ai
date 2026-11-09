@@ -276,6 +276,7 @@ function generateQuiz() {
       answer: 0
     }
   ];
+    window.currentQuestions = questions;
 
   let html = `<h3>${subject}: ${topic}</h3>`;
 
@@ -294,10 +295,26 @@ function generateQuiz() {
   html += `<br><button onclick="checkQuiz()">Submit Answers</button>`;
   output.innerHTML = html;
 }
+    function checkQuiz() {
+  let score = 0;
 
-function checkQuiz() {
-  alert("Quiz submitted! Great work!");
-}
+  window.currentQuestions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+
+    if (selected && Number(selected.value) === q.answer) {
+      score++;
+    }
+  });
+
+  const total = window.currentQuestions.length;
+  const percentage = Math.round((score / total) * 100);
+
+  document.getElementById("quizQuestions").innerHTML += `
+    <h3>Your score: ${score}/${total}</h3>
+    <p>Percentage: ${percentage}%</p>
+  `;
+    }
+
 </script>
 </body>
 </html>
